@@ -85,10 +85,10 @@ Top=8
 Bottom=8
 
 [InputPanel/ContentMargin]
-Left=4
-Right=4
-Top=4
-Bottom=4
+Left=0
+Right=0
+Top=0
+Bottom=0
 
 [InputPanel/Background]
 Color=$panel_bg
@@ -96,10 +96,10 @@ BorderColor=$border
 BorderWidth=1
 
 [InputPanel/Background/Margin]
-Left=4
-Right=4
-Top=4
-Bottom=4
+Left=0
+Right=0
+Top=0
+Bottom=0
 
 [InputPanel/Highlight]
 Color=$hl_bg
@@ -144,10 +144,10 @@ Top=4
 Bottom=4
 
 [Menu/ContentMargin]
-Left=4
-Right=4
-Top=4
-Bottom=4
+Left=0
+Right=0
+Top=0
+Bottom=0
 
 [Menu/CheckBox]
 Image=radio.png
@@ -172,14 +172,6 @@ Left=8
 Right=8
 Top=6
 Bottom=6
-
-[AccentColorField]
-0=Input Panel Border
-1=Input Panel Highlight Candidate Background
-2=Input Panel Highlight
-3=Menu Border
-4=Menu Separator
-5=Menu Selected Item Background
 EOF
 
 changed=0

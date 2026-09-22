@@ -91,24 +91,22 @@ Top=0
 Bottom=0
 
 [InputPanel/Background]
-Color=$panel_bg
-BorderColor=$border
-BorderWidth=1
+Image=panel.svg
 
 [InputPanel/Background/Margin]
-Left=0
-Right=0
-Top=0
-Bottom=0
+Left=14
+Right=14
+Top=14
+Bottom=14
 
 [InputPanel/Highlight]
-Color=$hl_bg
+Image=highlight.svg
 
 [InputPanel/Highlight/Margin]
-Left=8
-Right=8
-Top=6
-Bottom=6
+Left=10
+Right=10
+Top=8
+Bottom=8
 
 [InputPanel/PrevPage]
 Image=prev.png
@@ -133,15 +131,13 @@ NormalColor=$panel_fg
 HighlightCandidateColor=$hl_text
 
 [Menu/Background]
-Color=$panel_bg
-BorderColor=$border
-BorderWidth=1
+Image=panel.svg
 
 [Menu/Background/Margin]
-Left=4
-Right=4
-Top=4
-Bottom=4
+Left=14
+Right=14
+Top=14
+Bottom=14
 
 [Menu/ContentMargin]
 Left=0
@@ -156,13 +152,13 @@ Image=radio.png
 Image=arrow.png
 
 [Menu/Highlight]
-Color=$hl_bg
+Image=highlight.svg
 
 [Menu/Highlight/Margin]
-Left=8
-Right=8
-Top=6
-Bottom=6
+Left=10
+Right=10
+Top=8
+Bottom=8
 
 [Menu/Separator]
 Color=$border
@@ -181,6 +177,14 @@ else
   mv "$tmp" "$out/theme.conf"
   changed=1
 fi
+
+# 圆角面板/高亮背景 (SVG 九宫格源图, 颜色取自当前主题, 每次重写以跟随配色)
+cat > "$out/panel.svg" <<SVGEOF
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect x="1" y="1" width="46" height="46" rx="12" fill="$panel_bg" stroke="$border" stroke-width="2"/></svg>
+SVGEOF
+cat > "$out/highlight.svg" <<SVGEOF
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect width="40" height="40" rx="8" fill="$hl_bg"/></svg>
+SVGEOF
 
 # 翻页按钮等图标从默认主题复制（幂等）
 for img in arrow.png next.png prev.png radio.png; do

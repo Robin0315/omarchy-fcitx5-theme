@@ -41,7 +41,6 @@ Item {
   Process {
     id: syncProc
     command: ["/bin/bash", root.generator, "current", "--quiet"]
-    onFailed: console.warn("fcitx5-theme", "sync failed")
   }
 
   function sync() {
